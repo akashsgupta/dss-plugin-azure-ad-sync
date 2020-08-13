@@ -298,7 +298,7 @@ class AzureClient(object):
 
             # Add two columns
             group_members["groups"] = group_name_dss
-            group_members["login"] = group_members["email"].apply(self.get_user_id)
+            group_members["login"] = group_members["user principal name"].apply(self.get_user_id)
 
             return group_members
         except Exception as e:
